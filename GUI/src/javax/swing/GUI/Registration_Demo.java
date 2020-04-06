@@ -9,7 +9,7 @@ public class Registration_Demo extends JFrame
 {
 	JTextField txtUser,txtEmail,txtContact,txtPass;
 	JLabel lblName,lblContact,lblEmail,lblpass,lblGreet;
-	JButton btnSubmit,btnCancel,btnExit;
+	JButton btnSubmit,btnCancel;
 	
 	public Registration_Demo()
 	{
@@ -45,6 +45,11 @@ public class Registration_Demo extends JFrame
 			@Override
 			public void actionPerformed(ActionEvent e)
 			{
+				txtUser.setText("Ekta");
+				txtContact.setText("90XXXXXXXX");
+				txtEmail.setText("Ekta@gmail.com");
+				txtPass.setText("pass123");
+				
 				setVisible(false);
 				Logedin log=new Logedin();
 			}

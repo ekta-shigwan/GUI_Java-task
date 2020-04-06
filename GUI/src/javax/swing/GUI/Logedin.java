@@ -8,8 +8,8 @@ import javax.swing.*;
 public class Logedin extends JFrame 
 {
 	JTextField txtE_mail,txtPassword,txtUser,txtContact;
-	JLabel lblE_mail,lblPassword,lblGreet;
-	JButton btnSubmit,btnCancel,btnExit;
+	JLabel lblE_mail,lblPassword,lblError;
+	JButton btnSubmit,btnCancel;
 	
 	public Logedin() 
 	{
@@ -19,8 +19,8 @@ public class Logedin extends JFrame
 		lblPassword=new JLabel("Enter Password	: ");
 		lblPassword.setBounds(10,110,160,30);
 		
-		lblGreet=new JLabel();
-		lblGreet.setBounds(150,150,180,50);
+		lblError=new JLabel();
+		lblError.setBounds(50,200,110,20);
 
 		txtE_mail=new JTextField();
 		txtE_mail.setBounds(160, 90, 110, 20);
@@ -28,7 +28,7 @@ public class Logedin extends JFrame
 		txtPassword=new JTextField();
 		txtPassword.setBounds(160, 120, 110, 20);		
 		
-		btnSubmit=new JButton("Submit");
+		btnSubmit=new JButton("Login");
 		btnSubmit.setBounds(10,160,110, 20);
 
 		btnSubmit.addActionListener(new ActionListener()
@@ -36,8 +36,18 @@ public class Logedin extends JFrame
 			@Override
 			public void actionPerformed(ActionEvent e)
 			{
+				String val = txtE_mail.getText();
+				String val2=txtPassword.getText();
 				setVisible(false);
+				if(val.contentEquals("Ekta@gmail.com")&&val2.contentEquals("pass123"))
+				{
 				Last_window log=new Last_window();
+				}
+				else
+				{
+					lblError.setText("Login Fail");
+					setVisible(true);
+				}
 			}
 		});
 		
@@ -60,6 +70,7 @@ public class Logedin extends JFrame
 		add(txtPassword);
 		add(btnSubmit);
 		add(btnCancel);
+		add(lblError);
 		
 		setTitle("Varification Window ");
 		setSize(400,400);

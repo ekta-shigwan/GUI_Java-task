@@ -7,7 +7,7 @@ public class Last_window extends JFrame
 	JLabel lblWelcome; 
 	public Last_window()
 	{
-		lblWelcome=new JLabel("Welcome");
+		lblWelcome=new JLabel("Welcome To Home Page");
 		lblWelcome.setBounds(150,150,150,150);
 		add(lblWelcome);
 		
